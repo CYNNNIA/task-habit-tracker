@@ -1,5 +1,13 @@
+// **Código base para HabitsPage.jsx**
 import React from 'react'
-function Home() {
-  return <h1>Gestor de Tareas</h1>
+
+const HabitsPage = () => {
+  return (
+    <div>
+      <h1>Habits Page</h1>
+      <p>Aquí gestionaremos los hábitos.</p>
+    </div>
+  )
 }
-export default Home
+
+export default HabitsPage
