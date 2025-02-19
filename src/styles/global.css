@@ -1,4 +1,419 @@
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Fondo general */
+body {
+  background: linear-gradient(135deg, #e0f7fa, #4ad2d6);
+  color: #333;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 25px;
+}
+
+/* Contenedor principal */
+.main-container {
+  width: 90%; /* Ahora ocupa el 90% */
+  max-width: 1600px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 40px auto;
+}
+
+/* Navbar mejorada */
+.navbar {
+  width: 100%;
+  background-color: #00796b;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+  background-color: #004d40;
+  transform: translateY(-2px);
+}
+
+/* Título centrado */
+h1 {
+  font-size: 2.5rem;
+  margin: 30px 0px;
+  color: #00796b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor general de tareas */
+.task-container {
+  background-color: #f4fdfd;
+  border: 1px solid #00796b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario dentro del contenedor */
+.task-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.task-form input[type='text'] {
+  width: 40%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 2px solid #00796b;
+  border-radius: 6px;
+  font-size: 1.3rem;
+  margin: 0 10px 10px 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.task-form input[type='text']:focus {
+  border-color: #004d40;
+}
+
+.task-form button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  height: 45px;
+  border-radius: 10px;
+  color: rgb(8, 4, 4);
+  background-color: rgb(213, 211, 211);
+  border: none;
+}
+
+.task-form button:hover {
+  background-color: #ec9b0d;
+}
+
+/* Lista de tareas */
+.task-list {
+  margin-top: 20px;
+}
+
+/* Elementos individuales de tareas */
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task-item.completed {
+  background-color: #d4edda;
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+/* Detalles de la tarea */
+.task-details h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #00796b;
+}
+
+.task-details p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Botones de acción */
+.task-actions button {
+  margin-left: 8px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.task-actions .complete {
+  background-color: #f1c40f;
+  color: white;
+}
+
+.task-actions .complete:hover {
+  background-color: #f39c12;
+}
+
+.task-actions .delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.task-actions .delete:hover {
+  background-color: #c0392b;
+}
+
+/* Contenedor para los hábitos */
+.habit-list {
+  background-color: #f0fafb;
+  border: 1px solid #00796b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Elementos individuales de hábitos */
+.habit-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.habit-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.habit-progress {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.habit-progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+/* Botones de hábitos */
+.habit-item button {
+  margin-top: 10px;
+  margin-right: 8px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.habit-item button.complete {
+  background-color: #4caf50;
+  color: white;
+}
+
+.habit-item button.complete:hover {
+  background-color: #388e3c;
+}
+
+.habit-item button.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.habit-item button.delete:hover {
+  background-color: #c0392b;
+}
+
+/* Botón de reiniciar semana */
+.reset-btn {
+  margin-top: 20px;
+  background-color: #00796b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: #005c4f;
+}
+/* Estadísticas de Tareas */
+.task-stats {
+  background-color: #f0f9f8;
+  border: 1px solid #00796b;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-stats p {
+  margin: 5px 0;
+  font-weight: 600;
+  color: #004d40;
+}
+/* Contenedor de Hábitos */
+.habit-list {
+  background-color: #f9fefb;
+  border: 1px solid #00796b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Título de la sección */
+.habit-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #00796b;
+  text-align: center;
+}
+
+/* Item de Hábito */
+.habit-item {
+  background-color: #f0f9f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.habit-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Nombre del hábito */
+.habit-item h3 {
+  font-size: 1.5rem;
+  color: #00796b;
+  margin-bottom: 5px;
+}
+
+/* Barra de progreso */
+.habit-progress {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 12px;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.habit-progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+/* Botones */
+.habit-item button {
+  margin-right: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.habit-item button.complete {
+  background-color: #4caf50;
+  color: white;
+}
+
+.habit-item button.complete:hover {
+  background-color: #388e3c;
+}
+
+.habit-item button.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.habit-item button.delete:hover {
+  background-color: #c0392b;
+}
+
+/* Botón de Reiniciar Semana */
+.reset-btn {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: none;
+  background-color: #f1c40f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: #f39c12;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .task-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-form input[type='text'] {
+    width: 100%;
+  }
+
+  .task-form button {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-container {
+    width: 95%;
+    padding: 30px;
+  }
 }

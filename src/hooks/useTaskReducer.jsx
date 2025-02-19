@@ -1,5 +1,7 @@
 import { useReducer } from 'react'
 
+const initialState = []
+
 const taskReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TASK':
@@ -17,9 +19,8 @@ const taskReducer = (state, action) => {
   }
 }
 
-const useTaskReducer = (initialState = []) => {
+const useTaskReducer = () => {
   const [state, dispatch] = useReducer(taskReducer, initialState)
-
   return { state, dispatch }
 }
 

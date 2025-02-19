@@ -1,28 +1,44 @@
-import React, { useState } from 'react'
-import { useTasks } from '../context/TaskContext'
+import { useState } from 'react'
+import { useTaskContext } from '../context/TaskContext'
 
-function TaskForm() {
+const TaskForm = () => {
+  const { dispatch } = useTaskContext()
   const [taskName, setTaskName] = useState('')
-  const { dispatch } = useTasks()
+  const [taskDescription, setTaskDescription] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch({
-      type: 'ADD_TASK',
-      payload: { id: Date.now(), name: taskName, completed: false }
-    })
+
+    if (!taskName.trim()) return
+
+    const newTask = {
+      id: Date.now(),
+      name: taskName,
+      description: taskDescription,
+      completed: false
+    }
+
+    dispatch({ type: 'ADD_TASK', payload: newTask })
+
     setTaskName('')
+    setTaskDescription('')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='task-form' onSubmit={handleSubmit}>
       <input
         type='text'
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
-        placeholder='Add a new task'
+        placeholder='Nombre de la tarea'
       />
-      <button type='submit'>Add Task</button>
+      <input
+        type='text'
+        value={taskDescription}
+        onChange={(e) => setTaskDescription(e.target.value)}
+        placeholder='Descripción'
+      />
+      <button type='submit'>Agregar Tarea</button>
     </form>
   )
 }

@@ -1,13 +1,14 @@
-// **Código base para HabitsPage.jsx**
-import React from 'react'
+import HabitForm from '../components/HabitForm';
+import HabitList from '../components/HabitList';
 
 const HabitsPage = () => {
   return (
-    <div>
-      <h1>Habits Page</h1>
-      <p>Aquí gestionaremos los hábitos.</p>
+    <div className="main-container">
+      <h1>Seguimiento de Hábitos</h1>
+      <HabitForm />
+      <HabitList />
     </div>
-  )
-}
+  );
+};
 
-export default HabitsPage
+export default HabitsPage;

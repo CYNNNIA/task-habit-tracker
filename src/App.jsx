@@ -1,23 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import HabitsPage from './pages/HabitsPage'
 import TaskPage from './pages/TaskPage'
-import { HabitsProvider } from './context/HabitsContext'
-import { TaskProvider } from './hooks/useTaskReducer' // ✅ Importamos desde hooks
+import HabitsPage from './pages/HabitsPage'
 
 const App = () => {
   return (
-    <HabitsProvider>
-      <TaskProvider>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path='/habits' element={<HabitsPage />} />
-            <Route path='/tasks' element={<TaskPage />} />
-          </Routes>
-        </Router>
-      </TaskProvider>
-    </HabitsProvider>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path='/tasks' element={<TaskPage />} />
+        <Route path='/habits' element={<HabitsPage />} />
+      </Routes>
+    </>
   )
 }
 

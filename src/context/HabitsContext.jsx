@@ -1,13 +1,21 @@
-// Parece que hay un error debido a múltiples declaraciones de `createContext`, `useContext` y `useReducer`. Voy a corregir el archivo `HabitsContext.jsx` para evitar duplicaciones.
-
 import { createContext, useContext, useReducer } from 'react'
 
 const HabitsContext = createContext()
 
+export const useHabits = () => useContext(HabitsContext)
+
 const habitsReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_HABIT':
-      return [...state, action.payload]
+      return [...state, action.payload] // payload ya contiene el nombre
+    case 'MARK_DAY':
+      return state.map((habit) =>
+        habit.id === action.payload
+          ? { ...habit, completedDays: habit.completedDays + 1 }
+          : habit
+      )
+    case 'RESET_WEEK':
+      return state.map((habit) => ({ ...habit, completedDays: 0 }))
     case 'REMOVE_HABIT':
       return state.filter((habit) => habit.id !== action.payload)
     default:
@@ -24,7 +32,3 @@ export const HabitsProvider = ({ children }) => {
     </HabitsContext.Provider>
   )
 }
-
-export const useHabits = () => useContext(HabitsContext)
-
-// Eliminado el código duplicado de `TaskContext` aquí. Asegúrate de que `TaskContext.jsx` esté en la carpeta `hooks` y no haya más duplicados.
