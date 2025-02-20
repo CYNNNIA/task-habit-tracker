@@ -292,106 +292,150 @@ h1 {
 }
 /* Contenedor de Hábitos */
 .habit-list {
-  background-color: #f9fefb;
+  background-color: #f0fafb;
   border: 1px solid #00796b;
-  border-radius: 12px;
   padding: 20px;
+  border-radius: 12px;
   margin-top: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Título de la sección */
-.habit-list h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #00796b;
-  text-align: center;
-}
-
-/* Item de Hábito */
+/* Elementos individuales de hábitos */
 .habit-item {
-  background-color: #f0f9f8;
+  background-color: #f9f9f9;
   border: 1px solid #ddd;
+  padding: 16px;
   border-radius: 8px;
-  padding: 15px;
   margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
 
 .habit-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Nombre del hábito */
-.habit-item h3 {
-  font-size: 1.5rem;
+/* Botón de reiniciar semana */
+.reset-btn {
+  margin-top: 20px;
+  background-color: #00796b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: #005c4f;
+}
+
+/* Estadísticas de Tareas */
+.task-stats {
+  background-color: #f0f9f8;
+  border: 1px solid #00796b;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-stats p {
+  margin: 5px 0;
+  font-weight: 600;
+  color: #004d40;
+}
+
+/* Estilo para las estadísticas */
+.stats-container {
+  background-color: #f0fdf4;
+  border: 2px solid #00796b;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.stats-container h2 {
+  font-size: 1.6rem;
   color: #00796b;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 5px;
 }
 
-/* Barra de progreso */
-.habit-progress {
+.stats-container p {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+/* Barra de Progreso */
+.progress-bar {
   width: 100%;
   background-color: #e0e0e0;
+  border-radius: 8px;
   height: 12px;
-  border-radius: 10px;
   margin: 10px 0;
-  overflow: hidden;
 }
 
-.habit-progress-bar {
+.progress {
   height: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #4caf50;
   transition: width 0.3s ease;
 }
 
-/* Botones */
-.habit-item button {
-  margin-right: 8px;
-  padding: 8px 14px;
+/* Botones de Hábito */
+.habit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.habit-buttons button {
   border: none;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 
-.habit-item button.complete {
-  background-color: #4caf50;
-  color: white;
+.habit-buttons button:hover {
+  opacity: 0.9;
 }
 
-.habit-item button.complete:hover {
-  background-color: #388e3c;
-}
-
-.habit-item button.delete {
+.habit-buttons .delete {
   background-color: #e74c3c;
   color: white;
 }
 
-.habit-item button.delete:hover {
-  background-color: #c0392b;
+.completed-label {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-/* Botón de Reiniciar Semana */
 .reset-btn {
   margin-top: 15px;
-  padding: 10px 16px;
-  border: none;
-  background-color: #f1c40f;
+  padding: 10px 15px;
+  background-color: #00796b;
   color: white;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .reset-btn:hover {
-  background-color: #f39c12;
+  background-color: #005a4f;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
   .task-form {
