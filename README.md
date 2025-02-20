@@ -51,7 +51,7 @@ task-habit-tracker/
 1. **Clona el repositorio:**
 
 \`\`\`bash
-git clone https://github.com/tu-usuario/task-habit-tracker.git
+git clone https://github.com/CYNNNIA/task-habit-tracker.git
 \`\`\`
 
 2. **Instala las dependencias:**
