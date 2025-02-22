@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-/* Fondo general */
+
 body {
   background: linear-gradient(135deg, #e0f7fa, #4ad2d6);
   color: #333;
@@ -16,9 +16,9 @@ body {
   padding: 10px 25px;
 }
 
-/* Contenedor principal */
+
 .main-container {
-  width: 90%; /* Ahora ocupa el 90% */
+  width: 90%; 
   max-width: 1600px;
   background-color: white;
   padding: 40px;
@@ -28,7 +28,7 @@ body {
   margin: 40px auto;
 }
 
-/* Navbar mejorada */
+
 .navbar {
   width: 100%;
   background-color: #00796b;
@@ -60,7 +60,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Título centrado */
+
 h1 {
   font-size: 2.5rem;
   margin: 30px 0px;
@@ -71,7 +71,7 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor general de tareas */
+
 .task-container {
   background-color: #f4fdfd;
   border: 1px solid #00796b;
@@ -81,7 +81,7 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Formulario dentro del contenedor */
+
 .task-form {
   display: flex;
   justify-content: center;
@@ -120,12 +120,12 @@ h1 {
   background-color: #ec9b0d;
 }
 
-/* Lista de tareas */
+
 .task-list {
   margin-top: 20px;
 }
 
-/* Elementos individuales de tareas */
+
 .task-item {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -148,7 +148,7 @@ h1 {
   color: #6c757d;
 }
 
-/* Detalles de la tarea */
+
 .task-details h3 {
   margin: 0;
   font-size: 1.3rem;
@@ -161,7 +161,7 @@ h1 {
   color: #555;
 }
 
-/* Botones de acción */
+
 .task-actions button {
   margin-left: 8px;
   border: none;
@@ -190,7 +190,7 @@ h1 {
   background-color: #c0392b;
 }
 
-/* Contenedor para los hábitos */
+
 .habit-list {
   background-color: #f0fafb;
   border: 1px solid #00796b;
@@ -200,7 +200,7 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Elementos individuales de hábitos */
+
 .habit-item {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -229,7 +229,7 @@ h1 {
   transition: width 0.3s ease;
 }
 
-/* Botones de hábitos */
+
 .habit-item button {
   margin-top: 10px;
   margin-right: 8px;
@@ -259,7 +259,7 @@ h1 {
   background-color: #c0392b;
 }
 
-/* Botón de reiniciar semana */
+
 .reset-btn {
   margin-top: 20px;
   background-color: #00796b;
@@ -274,7 +274,7 @@ h1 {
 .reset-btn:hover {
   background-color: #005c4f;
 }
-/* Estadísticas de Tareas */
+
 .task-stats {
   background-color: #f0f9f8;
   border: 1px solid #00796b;
@@ -290,7 +290,7 @@ h1 {
   font-weight: 600;
   color: #004d40;
 }
-/* Contenedor de Hábitos */
+
 .habit-list {
   background-color: #f0fafb;
   border: 1px solid #00796b;
@@ -300,7 +300,7 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Elementos individuales de hábitos */
+
 .habit-item {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -314,7 +314,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón de reiniciar semana */
+
 .reset-btn {
   margin-top: 20px;
   background-color: #00796b;
@@ -330,7 +330,7 @@ h1 {
   background-color: #005c4f;
 }
 
-/* Estadísticas de Tareas */
+
 .task-stats {
   background-color: #f0f9f8;
   border: 1px solid #00796b;
@@ -347,7 +347,7 @@ h1 {
   color: #004d40;
 }
 
-/* Estilo para las estadísticas */
+
 .stats-container {
   background-color: #f0fdf4;
   border: 2px solid #00796b;
@@ -372,7 +372,6 @@ h1 {
   margin: 8px 0;
 }
 
-/* Barra de Progreso */
 .progress-bar {
   width: 100%;
   background-color: #e0e0e0;
@@ -388,7 +387,7 @@ h1 {
   transition: width 0.3s ease;
 }
 
-/* Botones de Hábito */
+
 .habit-buttons {
   display: flex;
   gap: 10px;

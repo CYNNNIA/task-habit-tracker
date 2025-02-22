@@ -7,19 +7,19 @@ const HabitForm = () => {
 
   const addHabit = (e) => {
     e.preventDefault()
-    if (!habitName.trim()) return // Evita añadir hábitos vacíos
+    if (!habitName.trim()) return 
 
     dispatch({
       type: 'ADD_HABIT',
       payload: {
         id: Date.now(),
-        name: habitName, // Asegúrate de enviar el nombre aquí
+        name: habitName, 
         completedDays: 0,
         totalDays: 7
       }
     })
 
-    setHabitName('') // Limpia el input tras añadir el hábito
+    setHabitName('') 
   }
 
   return (

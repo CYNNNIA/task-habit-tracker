@@ -5,12 +5,12 @@ const Statistics = () => {
   const { state: tasks } = useTaskContext();
   const { habits } = useHabits();
 
-  // Estadísticas de tareas
+  
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((task) => task.completed).length;
   const taskCompletionRate = totalTasks ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
-  // Estadísticas de hábitos
+  
   const totalHabits = habits.length;
   const completedHabits = habits.filter((habit) => habit.completedDays === habit.totalDays).length;
   const habitCompletionRate = totalHabits ? Math.round((completedHabits / totalHabits) * 100) : 0;

@@ -6,7 +6,7 @@ const HabitList = () => {
   const markDayComplete = (id) => {
     const habit = habits.find((h) => h.id === id);
 
-    // Evita que se marquen más de 7 días
+    
     if (habit.completedDays < habit.totalDays) {
       dispatch({ type: 'MARK_DAY', payload: id });
     }

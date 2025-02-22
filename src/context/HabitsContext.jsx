@@ -7,7 +7,7 @@ export const useHabits = () => useContext(HabitsContext)
 const habitsReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_HABIT':
-      return [...state, action.payload] // payload ya contiene el nombre
+      return [...state, action.payload] 
     case 'MARK_DAY':
       return state.map((habit) =>
         habit.id === action.payload
