@@ -1,38 +1,47 @@
-import { useTaskContext } from '../context/TaskContext';
-import { useHabits } from '../context/HabitsContext';
+import { useTaskContext } from "../context/TaskContext";
+import { useHabitsContext } from "../context/HabitsContext";
+import "../styles/stats.css";
 
 const Statistics = () => {
-  const { state: tasks } = useTaskContext();
-  const { habits } = useHabits();
+  const { tasks } = useTaskContext();
+  const { habits } = useHabitsContext();
 
-  
-  const totalTasks = tasks.length;
-  const completedTasks = tasks.filter((task) => task.completed).length;
-  const taskCompletionRate = totalTasks ? Math.round((completedTasks / totalTasks) * 100) : 0;
+  // Evitar errores si los estados son undefined
+  const totalTasks = tasks?.length || 0;
+  const completedTasks = tasks?.filter((task) => task.completed).length || 0;
+  const pendingTasks = totalTasks - completedTasks;
+  const taskProgress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
-  
-  const totalHabits = habits.length;
-  const completedHabits = habits.filter((habit) => habit.completedDays === habit.totalDays).length;
-  const habitCompletionRate = totalHabits ? Math.round((completedHabits / totalHabits) * 100) : 0;
+  const totalHabits = habits?.length || 0;
+  const completedHabits = habits?.reduce((acc, habit) => acc + habit.completedDays, 0);
+  const totalHabitDays = habits?.reduce((acc, habit) => acc + habit.totalDays, 0);
+  const habitProgress = totalHabitDays > 0 ? Math.round((completedHabits / totalHabitDays) * 100) : 0;
 
   return (
-    <div className="main-container">
-      <h1>📊 Estadísticas Generales</h1>
+    <div className="stats-container">
+      <h2>📊 Estadísticas Generales</h2>
 
-      {/* Estadísticas de Tareas */}
-      <div className="stats-container">
-        <h2>📋 Estadísticas de Tareas</h2>
-        <p><strong>Total de Tareas:</strong> {totalTasks}</p>
-        <p><strong>Tareas Completadas:</strong> {completedTasks}</p>
-        <p><strong>Porcentaje Completado:</strong> {taskCompletionRate}%</p>
+      {/* Sección de tareas */}
+      <div className="task-stats">
+        <h3>✅ Tareas</h3>
+        <p>Total: {totalTasks}</p>
+        <p>Completadas: {completedTasks}</p>
+        <p>Pendientes: {pendingTasks}</p>
+        <p>Progreso: {taskProgress}%</p>
+        <div className="progress-bar">
+          <div className="progress" style={{ width: `${taskProgress}%` }}></div>
+        </div>
       </div>
 
-      {/* Estadísticas de Hábitos */}
-      <div className="stats-container">
-        <h2>💡 Estadísticas de Hábitos</h2>
-        <p><strong>Total de Hábitos:</strong> {totalHabits}</p>
-        <p><strong>Hábitos Completados:</strong> {completedHabits}</p>
-        <p><strong>Porcentaje Completado:</strong> {habitCompletionRate}%</p>
+      {/* Sección de hábitos */}
+      <div className="habit-stats">
+        <h3>🏆 Hábitos</h3>
+        <p>Total de Hábitos: {totalHabits}</p>
+        <p>Días Completados: {completedHabits}</p>
+        <p>Progreso Total: {habitProgress}%</p>
+        <div className="progress-bar">
+          <div className="progress" style={{ width: `${habitProgress}%` }}></div>
+        </div>
       </div>
     </div>
   );

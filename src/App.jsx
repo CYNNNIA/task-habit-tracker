@@ -1,21 +1,22 @@
-import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import TaskPage from './pages/TaskPage'
-import HabitsPage from './pages/HabitsPage'
-import Statistics from './components/Statistics'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import TaskPage from "./pages/TaskPage";
+import HabitsPage from "./pages/HabitsPage";
+import Navbar from "./components/Navbar";
+import Statistics from "./components/Statistics"; // Asegúrate de importar esto
 
-
-const App = () => {
+function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path='/tasks' element={<TaskPage />} />
-        <Route path='/habits' element={<HabitsPage />} />
-        <Route path='/statistics' element={<Statistics />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/tasks" element={<TaskPage />} />
+        <Route path="/habits" element={<HabitsPage />} />
+        <Route path="/stats" element={<Statistics />} /> {/* Ruta corregida */}
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

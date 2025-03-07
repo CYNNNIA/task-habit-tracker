@@ -1,0 +1,163 @@
+/* Contenedor de tareas similar a estadísticas */
+.task-container {
+  background-color: #f0fdf4;
+  border: 2px solid #00796b;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título de tareas */
+.task-container h2 {
+  font-size: 1.6rem;
+  color: #00796b;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 5px;
+}
+
+/* Formulario de tareas */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs de tareas */
+.task-form input[type='text'] {
+  width: 40%;
+  min-width: 270px;
+  padding: 10px 12px;
+  border: 2px solid #00796b;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.task-form input[type='text']:focus {
+  border-color: #004d40;
+}
+
+/* Botón de agregar tarea */
+.task-form button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #004d40;
+}
+
+/* Lista de tareas */
+.task-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Elemento de tarea */
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones de completar y eliminar tarea */
+.task-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.task-actions button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón completar */
+.task-actions .complete {
+  background-color: #4caf50;
+  color: white;
+}
+
+.task-actions .complete:hover {
+  background-color: #388e3c;
+}
+
+/* Botón eliminar */
+.task-actions .delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.task-actions .delete:hover {
+  background-color: #c0392b;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .task-container {
+    width: 100%;
+    padding: 15px;
+    border: 3px solid;
+  }
+
+  .task-form {
+    flex-direction: column;
+    align-items: center;
+    
+    
+  }
+
+  .task-form input[type="text"] {
+    width: 100%;
+  }
+
+  .task-actions {
+
+    width: 100%;
+    gap: 10px;
+  }
+.task-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .task-actions button {
+    width: 40%;
+    height: 30px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+}

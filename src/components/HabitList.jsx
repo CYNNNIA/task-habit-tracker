@@ -1,12 +1,11 @@
-import { useHabits } from '../context/HabitsContext';
+import { useHabitsContext } from '../context/HabitsContext'; // Importación correcta
 
 const HabitList = () => {
-  const { habits, dispatch } = useHabits();
+  const { habits, dispatch } = useHabitsContext(); // Llamada corregida
 
   const markDayComplete = (id) => {
     const habit = habits.find((h) => h.id === id);
 
-    
     if (habit.completedDays < habit.totalDays) {
       dispatch({ type: 'MARK_DAY', payload: id });
     }

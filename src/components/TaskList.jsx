@@ -1,19 +1,20 @@
 import { useTaskContext } from '../context/TaskContext';
+import "../styles/task.css"; // Asegúrate de que el archivo está correctamente nombrado y en la carpeta correcta
 
 const TaskList = () => {
-  const { state: tasks, dispatch } = useTaskContext();
+  const { tasks, dispatch } = useTaskContext(); 
 
   const toggleTask = (id) => {
     dispatch({ type: 'TOGGLE_TASK', payload: id });
   };
 
   const removeTask = (id) => {
-    dispatch({ type: 'REMOVE_TASK', payload: id });
+    dispatch({ type: 'DELETE_TASK', payload: id });
   };
 
-  // Calcular estadísticas
-  const totalTasks = tasks.length;
-  const completedTasks = tasks.filter((task) => task.completed).length;
+  // Evitar errores si tasks es undefined
+  const totalTasks = tasks?.length || 0;
+  const completedTasks = tasks?.filter((task) => task.completed).length || 0;
   const pendingTasks = totalTasks - completedTasks;
   const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
@@ -39,12 +40,16 @@ const TaskList = () => {
           >
             <h3>{task.name}</h3>
             <p>{task.description}</p>
-            <button onClick={() => toggleTask(task.id)} className='complete'>
-              {task.completed ? 'Desmarcar' : 'Completar'}
-            </button>
-            <button onClick={() => removeTask(task.id)} className='delete'>
-              Eliminar
-            </button>
+
+            {/* Botones mejorados con clase task-actions */}
+            <div className="task-actions">
+              <button onClick={() => toggleTask(task.id)} className="complete">
+                {task.completed ? "Desmarcar" : "Completar"}
+              </button>
+              <button onClick={() => removeTask(task.id)} className="delete">
+                Eliminar
+              </button>
+            </div>
           </div>
         ))
       )}

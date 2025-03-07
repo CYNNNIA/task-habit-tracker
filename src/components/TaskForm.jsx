@@ -1,28 +1,28 @@
-import { useState } from 'react'
-import { useTaskContext } from '../context/TaskContext'
+import { useState } from 'react';
+import { useTaskContext } from '../context/TaskContext';
+import "../styles/task.css";
 
 const TaskForm = () => {
-  const { dispatch } = useTaskContext()
-  const [taskName, setTaskName] = useState('')
-  const [taskDescription, setTaskDescription] = useState('')
+  const { dispatch } = useTaskContext();
+  const [taskName, setTaskName] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-
-    if (!taskName.trim()) return
+    e.preventDefault();
+    if (!taskName.trim()) return;
 
     const newTask = {
       id: Date.now(),
       name: taskName,
       description: taskDescription,
       completed: false
-    }
+    };
 
-    dispatch({ type: 'ADD_TASK', payload: newTask })
+    dispatch({ type: 'ADD_TASK', payload: newTask });
 
-    setTaskName('')
-    setTaskDescription('')
-  }
+    setTaskName('');
+    setTaskDescription('');
+  };
 
   return (
     <form className='task-form' onSubmit={handleSubmit}>
@@ -38,9 +38,11 @@ const TaskForm = () => {
         onChange={(e) => setTaskDescription(e.target.value)}
         placeholder='Descripción'
       />
-      <button type='submit'>Agregar Tarea</button>
+      <div className="button-container">
+        <button type='submit'>Agregar Tarea</button>
+      </div>
     </form>
-  )
-}
+  );
+};
 
-export default TaskForm
+export default TaskForm;

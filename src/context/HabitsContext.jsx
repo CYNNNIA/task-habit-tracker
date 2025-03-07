@@ -1,34 +1,60 @@
-import { createContext, useContext, useReducer } from 'react'
+import { createContext, useContext, useReducer, useEffect } from "react";
 
-const HabitsContext = createContext()
+// Crear el contexto
+const HabitsContext = createContext();
 
-export const useHabits = () => useContext(HabitsContext)
+// Estado inicial
+const initialState = JSON.parse(localStorage.getItem("habits")) || [];
 
+// Reducer para manejar acciones
 const habitsReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD_HABIT':
-      return [...state, action.payload] 
-    case 'MARK_DAY':
-      return state.map((habit) =>
+    case "ADD_HABIT":
+      const newState = [...state, action.payload];
+      localStorage.setItem("habits", JSON.stringify(newState));
+      return newState;
+
+    case "MARK_DAY":
+      const updatedHabits = state.map((habit) =>
         habit.id === action.payload
           ? { ...habit, completedDays: habit.completedDays + 1 }
           : habit
-      )
-    case 'RESET_WEEK':
-      return state.map((habit) => ({ ...habit, completedDays: 0 }))
-    case 'REMOVE_HABIT':
-      return state.filter((habit) => habit.id !== action.payload)
-    default:
-      return state
-  }
-}
+      );
+      localStorage.setItem("habits", JSON.stringify(updatedHabits));
+      return updatedHabits;
 
+    case "RESET_WEEK":
+      const resetHabits = state.map((habit) => ({
+        ...habit,
+        completedDays: 0,
+      }));
+      localStorage.setItem("habits", JSON.stringify(resetHabits));
+      return resetHabits;
+
+    case "REMOVE_HABIT":
+      const filteredHabits = state.filter((habit) => habit.id !== action.payload);
+      localStorage.setItem("habits", JSON.stringify(filteredHabits));
+      return filteredHabits;
+
+    default:
+      return state;
+  }
+};
+
+// Proveedor de contexto
 export const HabitsProvider = ({ children }) => {
-  const [habits, dispatch] = useReducer(habitsReducer, [])
+  const [state, dispatch] = useReducer(habitsReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("habits", JSON.stringify(state));
+  }, [state]);
 
   return (
-    <HabitsContext.Provider value={{ habits, dispatch }}>
+    <HabitsContext.Provider value={{ habits: state, dispatch }}>
       {children}
     </HabitsContext.Provider>
-  )
-}
+  );
+};
+
+// Hook personalizado para acceder al contexto
+export const useHabitsContext = () => useContext(HabitsContext);

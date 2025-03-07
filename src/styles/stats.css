@@ -1,0 +1,88 @@
+.stats-container {
+  background-color: #f0fdf4;
+  border: 2px solid #00796b;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 300px auto;
+  max-height: 60vh;
+  width: 90vw;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stats-container h2 {
+  font-size: 1.6rem;
+  color: #00796b;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 5px;
+  height: 9vh;
+}
+
+.stats-container p {
+  font-size: 1.6rem;
+  margin: 8px 0;
+}
+
+.task-stats,
+.habit-stats {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.task-stats h3,
+.habit-stats h3 {
+  color: #00796b;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  height: 12px;
+  margin: 10px 0;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 8px;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+@media (max-width: 768px) {
+  .stats-container {
+    margin-top: 100px; /* Espacio para la navbar */
+    padding: 15px;
+    width: 95%;
+    min-height: auto; /* Permitir altura dinámica */
+    overflow-y: auto; /* Agrega scroll si es necesario */
+  }
+
+  .stats-container h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    white-space: normal; /* Permitir que el texto se divida en varias líneas si es necesario */
+    height: auto; /* Permitir que se ajuste sin desbordar */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .task-stats,
+  .habit-stats {
+    padding: 10px;
+    font-size: 1rem;
+    word-wrap: break-word; /* Evita que el texto se salga del contenedor */
+  }
+
+  .progress-bar {
+    height: 8px; /* Ajustamos el tamaño en móviles */
+  }
+}

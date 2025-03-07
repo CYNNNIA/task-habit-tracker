@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import { useHabits } from '../context/HabitsContext'
+import { useState } from 'react';
+import { useHabitsContext } from "../context/HabitsContext";
 
 const HabitForm = () => {
-  const [habitName, setHabitName] = useState('')
-  const { dispatch } = useHabits()
+  const [habitName, setHabitName] = useState('');
+  const { dispatch } = useHabitsContext();
 
   const addHabit = (e) => {
-    e.preventDefault()
-    if (!habitName.trim()) return 
+    e.preventDefault();
+    if (!habitName.trim()) return;
 
     dispatch({
       type: 'ADD_HABIT',
       payload: {
         id: Date.now(),
-        name: habitName, 
+        name: habitName,
         completedDays: 0,
         totalDays: 7
       }
-    })
+    });
 
-    setHabitName('') 
-  }
+    setHabitName('');
+  };
 
   return (
     <form className='task-form' onSubmit={addHabit}>
@@ -30,9 +30,11 @@ const HabitForm = () => {
         onChange={(e) => setHabitName(e.target.value)}
         placeholder='Añadir nuevo hábito...'
       />
-      <button type='submit'>➕ Añadir Hábito</button>
+      <div className="button-container">
+        <button type='submit'>➕ Añadir Hábito</button>
+      </div>
     </form>
-  )
-}
+  );
+};
 
-export default HabitForm
+export default HabitForm;
