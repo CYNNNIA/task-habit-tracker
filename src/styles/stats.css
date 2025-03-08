@@ -4,11 +4,20 @@
   border-radius: 12px;
   padding: 20px;
   margin: 300px auto;
-  max-height: 60vh;
-  width: 90vw;
+  max-height: 70vh;
+  width: 100vw;
   max-width: 600px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  overflow: hidden;
+  border: 1px solid red;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  
 }
 
 .stats-container h2 {
@@ -59,11 +68,14 @@
 }
 @media (max-width: 768px) {
   .stats-container {
-    margin-top: 100px; /* Espacio para la navbar */
+    margin-top: 70px; /* Espacio para la navbar */
     padding: 15px;
-    width: 95%;
-    min-height: auto; /* Permitir altura dinámica */
-    overflow-y: auto; /* Agrega scroll si es necesario */
+    width: 90vw;
+    min-height: 85vh; /* Permitir altura dinámica */
+    overflow-y: none; /* Agrega scroll si es necesario */
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .stats-container h2 {
@@ -85,4 +97,5 @@
   .progress-bar {
     height: 8px; /* Ajustamos el tamaño en móviles */
   }
+
 }

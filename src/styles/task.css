@@ -130,9 +130,8 @@
   }
 
   .task-form {
-    flex-direction: column;
-    align-items: center;
-    
+    align-items: flex-start;
+    width: 100%;
     
   }
 

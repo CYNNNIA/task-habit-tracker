@@ -17,6 +17,17 @@ body {
   overflow-x: hidden; /* Evita desbordamientos en móviles */
 }
 
+/* 🔹 Bloquea el scroll SOLO en estadísticas */
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 🔹 Permite scroll en las demás páginas */
+body {
+  overflow: auto;
+}
+
 /* Contenedor principal */
 .main-container {
   width: 90%;
