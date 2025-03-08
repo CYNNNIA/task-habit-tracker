@@ -10,10 +10,10 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Elimina la clase "no-scroll" al cambiar de página
+  
     document.body.classList.remove("no-scroll");
 
-    // Si la página es Home o Stats, se añade "no-scroll"
+    
     if (location.pathname === "/stats" || location.pathname === "/") {
       document.body.classList.add("no-scroll");
     }
