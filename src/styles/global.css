@@ -1,4 +1,4 @@
-/* global.css - Estilos generales */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,21 +14,21 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 10px;
-  overflow-x: hidden; /* Evita desbordamientos en móviles */
+  overflow-x: hidden;
 }
 
-/* 🔹 Bloquea el scroll SOLO en estadísticas */
+
 .no-scroll {
   height: 100vh;
   overflow: hidden;
 }
 
-/* 🔹 Permite scroll en las demás páginas */
+
 body {
   overflow: auto;
 }
 
-/* Contenedor principal */
+
 .main-container {
   width: 90%;
   max-width: 1200px;
@@ -37,7 +37,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 100px auto; /* Asegura que haya espacio arriba */
+  margin: 100px auto; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@ body {
   
 }
 
-/* Estilos generales de botones */
+
 button {
   padding: 10px 15px;
   border-radius: 6px;
@@ -58,22 +58,22 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Corrección del título */
+
 h2 {
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
-  white-space: nowrap; /* Evita que se parta en dos líneas */
+  white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Botones alineados */
+
 .button-container {
   display: flex;
   justify-content: center;
   gap: 15px;
-  flex-wrap: wrap; /* Evita que se salgan en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 .button-container button {

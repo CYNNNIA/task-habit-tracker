@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/home.css"; // Estilos para la página de inicio
-
+import "../styles/home.css"; 
 const Home = () => {
   return (
     <div className="home-container">

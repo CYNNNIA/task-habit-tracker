@@ -1,19 +1,18 @@
-.home-container {
-  text-align: center;
-  margin-top: 200px;
-  overflow: hidden;
-  height: 100vh; /* Ocupa el 100% de la pantalla */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centrar contenido */
-  align-items: center; /* Centrar horizontalmente */
-}
+
 
 .home-container h1 {
   font-size: 2rem;
   color: #00796b;
 }
-
+.home-container, .stats-container {
+  text-align: center;
+  height: 95vh; /* Que ocupe toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita el scroll */
+}
 .home-container p {
   font-size: 1.2rem;
   margin-bottom: 20px;

@@ -1,12 +1,12 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 
-// Crear el contexto
+
 const HabitsContext = createContext();
 
-// Estado inicial
+
 const initialState = JSON.parse(localStorage.getItem("habits")) || [];
 
-// Reducer para manejar acciones
+
 const habitsReducer = (state, action) => {
   switch (action.type) {
     case "ADD_HABIT":
@@ -41,7 +41,7 @@ const habitsReducer = (state, action) => {
   }
 };
 
-// Proveedor de contexto
+
 export const HabitsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(habitsReducer, initialState);
 
@@ -56,5 +56,5 @@ export const HabitsProvider = ({ children }) => {
   );
 };
 
-// Hook personalizado para acceder al contexto
+
 export const useHabitsContext = () => useContext(HabitsContext);

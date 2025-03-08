@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "../styles/navbar.css"; // Asegúrate de importar el CSS
+import "../styles/navbar.css"; 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
-      {/* 🔹 Hacemos que el título sea un <Link> para que redirija a la página de inicio */}
       <Link to="/" className="navbar-title">
         Task & Habit Tracker
       </Link>
 
-      {/* Menú hamburguesa para móviles */}
+     
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </div>

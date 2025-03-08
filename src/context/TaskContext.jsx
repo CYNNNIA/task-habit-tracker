@@ -7,19 +7,19 @@ const taskReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
       const updatedTasks = [...state, action.payload];
-      localStorage.setItem("tasks", JSON.stringify(updatedTasks)); // Guardar en localStorage
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks)); 
       return updatedTasks;
 
     case "DELETE_TASK":
       const filteredTasks = state.filter(task => task.id !== action.payload);
-      localStorage.setItem("tasks", JSON.stringify(filteredTasks)); // Guardar en localStorage
+      localStorage.setItem("tasks", JSON.stringify(filteredTasks)); 
       return filteredTasks;
 
     case "TOGGLE_TASK":
       const toggledTasks = state.map(task =>
         task.id === action.payload ? { ...task, completed: !task.completed } : task
       );
-      localStorage.setItem("tasks", JSON.stringify(toggledTasks)); // Guardar en localStorage
+      localStorage.setItem("tasks", JSON.stringify(toggledTasks)); 
       return toggledTasks;
 
     default:

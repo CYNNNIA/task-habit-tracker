@@ -6,7 +6,7 @@ const TaskPage = () => {
     <div className="main-container">
       <h1>Gestor de Tareas</h1>
 
-      {/* Contenedor para Formulario y Lista de Tareas */}
+
       <div className="task-container">
         <TaskForm />
         <TaskList />

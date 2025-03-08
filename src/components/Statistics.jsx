@@ -6,7 +6,7 @@ const Statistics = () => {
   const { tasks } = useTaskContext();
   const { habits } = useHabitsContext();
 
-  // Evitar errores si los estados son undefined
+ 
   const totalTasks = tasks?.length || 0;
   const completedTasks = tasks?.filter((task) => task.completed).length || 0;
   const pendingTasks = totalTasks - completedTasks;
@@ -21,7 +21,7 @@ const Statistics = () => {
     <div className="stats-container">
       <h2>📊 Estadísticas Generales</h2>
 
-      {/* Sección de tareas */}
+     
       <div className="task-stats">
         <h3>✅ Tareas</h3>
         <p>Total: {totalTasks}</p>
@@ -33,7 +33,7 @@ const Statistics = () => {
         </div>
       </div>
 
-      {/* Sección de hábitos */}
+    
       <div className="habit-stats">
         <h3>🏆 Hábitos</h3>
         <p>Total de Hábitos: {totalHabits}</p>

@@ -1,7 +1,7 @@
 import { useHabitsContext } from '../context/HabitsContext'; // Importación correcta
 
 const HabitList = () => {
-  const { habits, dispatch } = useHabitsContext(); // Llamada corregida
+  const { habits, dispatch } = useHabitsContext(); 
 
   const markDayComplete = (id) => {
     const habit = habits.find((h) => h.id === id);
