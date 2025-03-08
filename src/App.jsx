@@ -4,22 +4,20 @@ import Home from "./pages/Home";
 import TaskPage from "./pages/TaskPage";
 import HabitsPage from "./pages/HabitsPage";
 import Navbar from "./components/Navbar";
-import Statistics from "./components/Statistics"; // Asegúrate de importar esto
+import Statistics from "./components/Statistics";
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Elimina la clase al cambiar de página
+    // Elimina la clase "no-scroll" al cambiar de página
     document.body.classList.remove("no-scroll");
 
-  
-    if (location.pathname === "/stats") {
+    // Si la página es Home o Stats, se añade "no-scroll"
+    if (location.pathname === "/stats" || location.pathname === "/") {
       document.body.classList.add("no-scroll");
     }
-    if (location.pathname === "/home") {
-      document.body.classList.add("no-scroll");
-    }
+
   }, [location.pathname]);
 
   return (
