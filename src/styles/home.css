@@ -6,7 +6,7 @@
 }
 .home-container, .stats-container {
   text-align: center;
-  height: 95vh; /* Que ocupe toda la pantalla */
+  height: 80vh; /* Que ocupe toda la pantalla */
   display: flex;
   flex-direction: column;
   justify-content: center;
