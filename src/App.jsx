@@ -13,8 +13,11 @@ function App() {
     // Elimina la clase al cambiar de página
     document.body.classList.remove("no-scroll");
 
-    // Si estamos en la ruta de estadísticas, bloquear scroll
+  
     if (location.pathname === "/stats") {
+      document.body.classList.add("no-scroll");
+    }
+    if (location.pathname === "/home") {
       document.body.classList.add("no-scroll");
     }
   }, [location.pathname]);
@@ -26,7 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tasks" element={<TaskPage />} />
         <Route path="/habits" element={<HabitsPage />} />
-        <Route path="/stats" element={<Statistics />} /> {/* Ruta corregida */}
+        <Route path="/stats" element={<Statistics />} />
       </Routes>
     </>
   );

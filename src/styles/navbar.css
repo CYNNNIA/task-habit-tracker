@@ -1,4 +1,4 @@
-/* Estilos generales de la navbar */
+
 .navbar {
   width: 100%;
   background: linear-gradient(135deg, #00796b, #004d40);
@@ -25,16 +25,15 @@
   text-overflow: ellipsis;
 }
 
-/* Botón menú hamburguesa */
 .hamburger {
-  display: none; /* Se oculta en pantallas grandes */
+  display: none; 
   font-size: 1.8rem;
   cursor: pointer;
   user-select: none;
   color: white;
 }
 
-/* Enlaces de navegación */
+
 .nav-links {
   display: flex;
   gap: 15px;
@@ -71,14 +70,14 @@
   transform: translateY(-2px);
 }
 
-/* 🔹 Responsive: Menú hamburguesa en móviles */
+
 @media (max-width: 768px) {
   .hamburger {
-    display: block; /* Ahora se muestra */
+    display: block;
   }
 
   .nav-links {
-    display: none; /* Se oculta el menú por defecto */
+    display: none; 
     flex-direction: column;
     position: absolute;
     top: 60px;
@@ -91,7 +90,7 @@
   }
 
   .nav-links.open {
-    display: flex; /* Se muestra cuando se activa */
+    display: flex; 
   }
 
   .nav-links li {
