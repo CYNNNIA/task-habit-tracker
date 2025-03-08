@@ -1,178 +1,112 @@
-.habit-container {
-  background-color: #f0fdf4;
-  border: 2px solid #00796b;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 1000px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
+/* habits.css - Estilos para hábitos */
 
-/* Título */
-.habit-container h2 {
-  font-size: 1.6rem;
-  color: #00796b;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #00796b;
-  padding-bottom: 5px;
-}
-
-/* Lista de hábitos */
 .habit-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  background-color: #f0fafb;
+  border: 1px solid #00796b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid;
 }
 
-/* Elemento individual de hábito */
 .habit-item {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   padding: 16px;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;  /* Hacer que el título esté arriba */
-  justify-content: center;
-  align-items: flex-start;
+  margin-bottom: 12px;
   transition: box-shadow 0.3s ease;
-}
-.task-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;  /* Hacer que el título esté arriba */
-  justify-content: center;
-  align-items: center;
-  transition: box-shadow 0.3s ease;
+ 
 }
 
 .habit-item:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+.habit-container {
+    border: 1px solid #00796b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-/* Nombre del hábito */
-.habit-title {
-  font-size: 1.2rem;
-  font-weight: bold;
+.habit-container h2 {
+  font-size: 1.8rem;
   color: #00796b;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
-
-/* Contenedor inferior con la barra de progreso y botones */
-.habit-footer {
-  display: flex;
-  
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+.habit-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
-
-/* Contenedor de progreso */
-.habit-progress-container {
-  flex-grow: 1; /* Ocupar el espacio disponible */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-}
-
-/* Barra de progreso */
-.habit-progress-bar {
+.habit-progress {
   width: 100%;
   height: 10px;
   background-color: #e0e0e0;
   border-radius: 5px;
-  margin-top: 5px;
-  position: relative;
+  margin-top: 8px;
+}
+.habit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
 }
 
-.habit-progress {
+.habit-buttons button {
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #0d6e63;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.habit-buttons .delete {
+  background-color: #d32f2f;
+}
+
+.habit-progress-bar {
   height: 100%;
   border-radius: 5px;
   background-color: #4caf50;
   transition: width 0.3s ease;
 }
 
-/* Botones */
-.habit-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.habit-buttons button {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Botón completar */
-.habit-buttons .complete {
-  background-color: #4caf50;
-  color: white;
-}
-
-.habit-buttons .complete:hover {
-  background-color: #388e3c;
-}
-
-/* Botón eliminar */
-.habit-buttons .delete {
-  background-color: #e74c3c;
-  color: white;
-}
-
-.habit-buttons .delete:hover {
-  background-color: #c0392b;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .habit-container {
-    width: 90vw;
-    padding: 15px;
-    margin-right: 10px;
+    padding: 20px;
+    height: 95%;
+    font-size: 15px;
   }
-
-  .habit-item {
-    padding: 12px;
+  
+  .habit-buttons button {
+    flex: 1;
+    padding: 10px;
   }
   .task-item {
-    padding: 12px;
-  }
+    padding: 3px;
+    font-size: 15px;
 
-  .habit-footer {
-    flex-direction: column; /* Para que en móvil la barra y botones estén en columna */
-    align-items: center;
-    width: 100%;
   }
-
-  .habit-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  .task-item .progress-bar {
+    height: 10px;
+    width: 95%;
+    
   }
-
-  .habit-buttons button {
-    width: 40%;
-    height: fit-content;
-    font-size: 0.7rem;
-    display: flex;
-    justify-content: center;
+  .task-item .progress {
+    height: 10px;
   }
-
-  .stats-container {
-    gap: 15px;
-    border: 1px solid red;
-    width: 100%;
+  .task-item p{
+    font-size: 15px;
+  }
+  .task-item .habit-buttons {
+    padding: 5px;
+    height: 50px;
+  }
+.habit-buttons button {
+  flex: none;
 }
+  
 }

@@ -78,8 +78,8 @@ h2 {
 
 .button-container button {
   flex: 1;
-  max-width: 140px;
-  padding: 10px 15px;
+  padding: 8px 15px;
+  margin: 10px;
   border-radius: 8px;
   font-size: 1rem;
   text-align: center;
@@ -94,9 +94,10 @@ h2 {
 
   .button-container {
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     display: block;
     padding-top: 10px;
+    margin-right: 20px;
   }
 
   .button-container button {
