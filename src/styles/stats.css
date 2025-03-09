@@ -10,6 +10,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
+
 }
 body {
   margin: 0;
@@ -69,7 +70,7 @@ body {
   .stats-container {
     margin-top: 70px; /* Espacio para la navbar */
     padding: 15px;
-    width: 90vw;
+    width: 100%;
     min-height: 85vh; /* Permitir altura dinámica */
     overflow-y: none; /* Agrega scroll si es necesario */
     justify-content: center;
